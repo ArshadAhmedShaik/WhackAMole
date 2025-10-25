@@ -62,8 +62,6 @@ for (let x of holes) {
                     mole.remove();
                 }
             }
-            score = 0;
-            document.querySelector("#liveScore").textContent = `Score: ${score}`;
             clearInterval(id);
         }
     });
