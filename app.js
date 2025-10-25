@@ -62,6 +62,7 @@ for (let x of holes) {
                     mole.remove();
                 }
             }
+            score = 0;
             clearInterval(id);
         }
     });
@@ -72,8 +73,17 @@ window.addEventListener("keydown", function (event) {
     if (!started) {
         if (event.key == "Enter") {
             started = true;
+            let h2 = document.querySelector("h2");
+            h2.innerHTML = "Game Started!";
+            let h3 = document.querySelector("h3");
+            h3.innerText = "Score: 0";
             let enter = document.querySelector("#enter");
-            enter.classList.add("entery");
+            if (enter) {
+                enter.classList.add("entery");
+                window.setTimeout(function () {
+                    enter.classList.remove("entery");
+                }, 100);
+            }
             window.setTimeout(function () {
                 enter.classList.remove("entery");
             }, 100);
